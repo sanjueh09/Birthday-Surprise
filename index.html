@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6dce4">
+<title>For Anu ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+:root{--pink:#f6dce4;--pink2:#edbdcc;--rose:#a65d79;--ink:#49343b;--muted:#806a71;--paper:#fffaf8;--line:#efdce2}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fbeaf0,#f2d7e1);color:var(--ink);font-family:"DM Sans",sans-serif;min-height:100vh}
+.wrap{max-width:720px;margin:0 auto;padding:24px 14px 40px}.app{background:var(--paper);border:1px solid #fff;border-radius:34px;padding:clamp(22px,6vw,44px);box-shadow:0 20px 60px #8b526018;min-height:82vh;position:relative;overflow:hidden}
+.progress{display:flex;gap:7px;margin-bottom:42px}.progress span{height:5px;flex:1;border-radius:8px;background:#f0dfe5}.progress span.active{background:#b6758d}
+.kicker{text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:700;color:var(--rose);margin:0 0 20px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;line-height:1.13;margin:0 0 20px}h1{font-size:clamp(38px,9vw,58px)}h2{font-size:clamp(30px,7vw,42px)}h3{font-size:25px}
+.italic{font-style:italic;color:var(--rose)}p{font-size:16px;line-height:1.85;color:var(--muted);margin:0 0 20px}.lead{font-size:19px;line-height:1.75}
+.photo{width:100%;height:auto;max-height:560px;object-fit:cover;display:block;border-radius:24px;box-shadow:0 12px 30px #754b5b17;background:#f9edf1;margin:26px 0}.photo.tall{aspect-ratio:4/5}.caption{font-size:13px;text-align:center;margin-top:-12px;margin-bottom:24px}
+button,.btn{border:0;border-radius:999px;background:var(--rose);color:white;font:600 15px "DM Sans",sans-serif;padding:16px 22px;cursor:pointer;text-align:center;text-decoration:none;display:inline-block;min-height:50px}
+button.secondary,.btn.secondary{background:#f6e8ed;color:var(--rose);border:1px solid #ecd3dd}.actions{display:flex;gap:10px;margin-top:30px}.actions button{flex:1}.stage{display:none;animation:fade .35s ease}.stage.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.memory{background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px}.memory img{width:100%;height:210px;object-fit:cover;border-radius:12px;display:block}.memory p{font-size:13px;line-height:1.5;margin:10px 2px 3px}
+.card{padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff;margin:12px 0}.reveal{display:none;margin-top:12px}.reveal.open{display:block}.gift{width:100%;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:18px;text-align:left;padding:18px}.gift strong{font-family:"Playfair Display",serif;font-size:22px;font-weight:500}.gift small{display:block;color:var(--rose);margin-top:5px}
+.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid var(--line);margin:8px 0;padding:13px 15px;border-radius:14px;font-weight:500}.option.selected{border-color:var(--rose);background:#fbecf1}.feedback{font-size:14px;color:var(--rose);margin-top:8px}
+input{width:100%;padding:14px;border-radius:14px;border:1px solid var(--line);font:inherit;background:white;color:var(--ink)}.tiny{font-size:12px;color:#9b858c}.center{text-align:center}.heart{color:var(--rose)}.endnote{font-family:"Playfair Display",serif;font-size:19px;line-height:1.9;color:var(--ink)}
+@media(max-width:440px){.wrap{padding:12px 9px 25px}.app{border-radius:27px;padding:22px 19px}.progress{margin-bottom:32px}.grid{gap:8px}.memory img{height:165px}.actions{gap:8px}.actions button{padding:13px 10px;font-size:14px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap"><main class="app">
+<div class="progress" id="progress" aria-label="Progress"></div>
+
+<section class="stage active" data-stage="0">
+<p class="kicker">A tiny birthday surprise</p>
+<h1>Hey, <span class="italic">Anu.</span></h1>
+<p class="lead">You're home now? Okay… I saved one more thing for you.</p>
+<img class="photo tall" src="01-favourite.jpg" alt="Our favourite photo together" onerror="this.onerror=null;this.src='02-together.jpg'">
+<p>The gifts were one part. This little corner of the internet is just for you.</p>
+<div class="actions"><button onclick="next()">Open your surprise ♡</button></div>
+</section>
+
+<section class="stage" data-stage="1">
+<p class="kicker">Chapter one · where it started</p><h2>From projects<br><span class="italic">to us.</span></h2>
+<p>We met doing web updations work in college, working on the same projects. Back then, it was just another project. Funny how life had other plans. Somewhere along the way… you became my person.</p>
+<p>I don't think we needed some movie-style beginning. I'm just glad our story started there.</p>
+<img class="photo" src="02-together.jpg" alt="A memory of us">
+<div class="actions"><button class="secondary" onclick="prev()">Back</button><button onclick="next()">Keep going ♡</button></div>
+</section>
+
+<section class="stage" data-stage="2">
+<p class="kicker">Chapter two · one of my favourites</p><h2>That day in <span class="italic">Hyderabad.</span></h2>
+<p>Lumbini Park, then Birla Mandir. A day I keep coming back to in my head. This laugh. This moment. One for the memory book.</p>
+<img class="photo" src="01-favourite.jpg" alt="Our favourite photo" onerror="this.onerror=null;this.src='09-funny.jpg'">
+<p>Some memories don't need a big caption. You're there, and that's enough.</p>
+<div class="actions"><button class="secondary" onclick="prev()">Back</button><button onclick="next()">Next ♡</button></div>
+</section>
+
+<section class="stage" data-stage="3">
+<p class="kicker">Chapter three · important research</p><h2>100 kgs.<br><span class="italic">100 cms.</span></h2>
+<p>A relationship built on love, trust, and absolutely questionable measurements.</p>
+<div class="card center"><h3>Official scientific conclusion</h3><p>100 cms of attitude.<br>100 kgs of nonsense.</p><p>Height difference is real; the teasing is permanent, and neither of us is ever letting this joke go.</p></div>
+<img class="photo" src="09-funny.jpg" alt="One of our funny moments" onerror="this.style.display='none'">
+<p>Unsolved mystery #1: What exactly is “bli blu”? I've been thinking about this. I need answers, Anu.</p>
+<div class="actions"><button class="secondary" onclick="prev()">Back</button><button onclick="next()">One more thing</button></div>
+</section>
+
+<section class="stage" data-stage="4">
+<p class="kicker">A few little things</p><h2>Tap to reveal <span class="italic">a little love.</span></h2>
+<p>These are the gifts you already have. I just wanted to leave a few words with them.</p>
+<div class="card"><button class="gift" onclick="toggleReveal('necklace')"><strong>♡ Necklace</strong><small>Tap to reveal</small></button><div class="reveal" id="necklace"><p>A little something for you to wear and, hopefully, smile at when you think of me.</p></div></div>
+<div class="card"><button class="gift" onclick="toggleReveal('ring')"><strong>♡ Ring</strong><small>Tap to reveal</small></button><div class="reveal" id="ring"><p>A small reminder of us, tucked into an everyday moment.</p></div></div>
+<div class="card"><button class="gift" onclick="toggleReveal('bracelet')"><strong>♡ Bracelet</strong><small>Tap to reveal</small></button><div class="reveal" id="bracelet"><p>For your wrist, and for all the little moments still waiting for us.</p></div></div>
+<div class="card"><button class="gift" onclick="toggleReveal('earrings')"><strong>♡ Earrings</strong><small>Tap to reveal</small></button><div class="reveal" id="earrings"><p>Something to make you smile — just like you do for me.</p></div></div>
+<p>And the handwritten letters? Those are still yours to keep and reread whenever you want.</p>
+<div class="actions"><button class="secondary" onclick="prev()">Back</button><button onclick="next()">Quiz time ♡</button></div>
+</section>
+
+<section class="stage" data-stage="5">
+<p class="kicker">A very serious test</p><h2>How well do you know <span class="italic">us?</span></h2>
+<div id="quiz"></div><p id="quizResult" class="feedback" aria-live="polite"></p>
+<div class="actions"><button class="secondary" onclick="prev()">Back</button><button onclick="next()">Okay, one last page</button></div>
+</section>
+
+<section class="stage" data-stage="6">
+<p class="kicker">Press play, if you like</p><h2>A song for <span class="italic">Anu.</span></h2>
+<p>Some songs just feel like they belong in a memory. This is one of yours.</p>
+<a class="btn" href="https://music.youtube.com/watch?v=_ofFkIYi00Q&si=nd4y2T45cvRCtQAm&drli=1" target="_blank" rel="noopener">♫ Play “Tujhko” on YouTube Music</a>
+<p class="tiny">The song opens in YouTube Music. Your browser may not allow music to play automatically, so you get to choose.</p>
+<img class="photo" src="08-photo-booth.jpg" alt="A photo-booth memory" onerror="this.onerror=null;this.src='02-together.jpg'">
+<p>That's the vibe. Backread this, please. The last page — but not the last memory.</p>
+<div class="actions"><button class="secondary" onclick="prev()">Back</button><button onclick="next()">Read the last page ♡</button></div>
+</section>
+
+<section class="stage" data-stage="7">
+<p class="kicker">Happy birthday, my girl</p><h2>My favourite person to be <span class="italic">annoyed by.</span></h2>
+<img class="photo tall" src="01-favourite.jpg" alt="Our favourite photo together" onerror="this.onerror=null;this.src='02-together.jpg'">
+<div class="endnote">
+<p style="color:var(--ink)">Happy birthday, Anu. ♡</p>
+<p style="color:var(--ink)">I love the little things about you. The way you scold me, tease me, and take care of me like I'm your baby — even when you're pretending to be annoyed. I don't always say it properly, but those things mean a lot to me.</p>
+<p style="color:var(--ink)">And obviously, we cannot forget 100 kgs versus 100 cms. Some couples have normal inside jokes. We have this. Also, I still haven't decoded “bli blu”. I'm beginning to think you plan to keep me confused forever.</p>
+<p style="color:var(--ink)">Jokes apart, I'm really glad I have you in my life. I hope this year brings you so many reasons to smile, and all the little things you've been wishing for. Thank you for being you, Anu. For the teasing, the scolding, the care, and all the moments that have become ours.</p>
+<p style="color:var(--ink)">I hope you always remember how special you are to me, even on the most ordinary days.</p>
+<p style="color:var(--ink)">Happy birthday, my girl. ♡<br>With all my love.</p>
+</div>
+<div class="actions"><button class="secondary" onclick="prev()">Back</button><button onclick="go(0)">Start again ♡</button></div>
+<p class="tiny center">Made with love, just for Anu · ♡</p>
+</section>
+</main></div>
+<script>
+const stages=[...document.querySelectorAll('.stage')];let current=0;
+const progress=document.getElementById('progress');
+stages.forEach((_,i)=>{const s=document.createElement('span');if(i===0)s.className='active';progress.appendChild(s)});
+function go(i){current=Math.max(0,Math.min(stages.length-1,i));stages.forEach((s,j)=>s.classList.toggle('active',j===current));[...progress.children].forEach((s,j)=>s.classList.toggle('active',j<=current));window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
+function next(){go(current+1)}function prev(){go(current-1)}
+function toggleReveal(id){document.getElementById(id).classList.toggle('open')}
+const questions=[
+{q:'Where did our story begin?',a:['At a café','In the college web updations department','At Lumbini Park','At Birla Mandir'],c:1,why:'We met while working on the same college projects.'},
+{q:'Where did we go on that special outing?',a:['Lumbini Park, then Birla Mandir','Birla Mandir, then Lumbini Park','A movie, then dinner','Somewhere neither remembers'],c:0,why:'Lumbini Park first, followed by Birla Mandir.'},
+{q:'What do I love about you?',a:['You never argue with me','You always let me win','You scold me, tease me and care for me','You never make fun of me'],c:2,why:'Especially the way you care for me like I am your baby.'},
+{q:'What is our iconic size-comparison joke?',a:['100 rupees and 100 dollars','100 kgs and 100 cms','100 steps and 100 calls','100 photos and 100 messages'],c:1,why:'One very specific inside joke.'},
+{q:'What mystery have I still not solved?',a:['Your favourite colour','Why I love you','What exactly “bli blu” means','Where my gifts disappeared'],c:2,why:'Bli blu remains under investigation, madam.'}
+];let answers={},checked=false;
+function renderQuiz(){const root=document.getElementById('quiz');root.innerHTML='';questions.forEach((q,i)=>{const card=document.createElement('div');card.className='card';const title=document.createElement('p');title.style.color='var(--ink)';title.style.fontWeight='600';title.textContent=(i+1)+'. '+q.q;card.appendChild(title);q.a.forEach((a,j)=>{const b=document.createElement('button');b.className='option'+(answers[i]===j?' selected':'');b.textContent=a;b.onclick=()=>{answers[i]=j;checked=false;document.getElementById('quizResult').textContent='';renderQuiz()};card.appendChild(b)});if(checked){const f=document.createElement('p');f.className='feedback';f.textContent=(answers[i]===q.c?'Correct ♡ ':'Answer: '+q.a[q.c]+'. ')+q.why;card.appendChild(f)}root.appendChild(card)});if(!checked){const b=document.createElement('button');b.textContent='Check my answers';b.style.width='100%';b.onclick=()=>{if(Object.keys(answers).length<questions.length){document.getElementById('quizResult').textContent='Answer all five first, madam ♡';return}checked=true;renderQuiz();document.getElementById('quizResult').textContent='Your score: '+questions.filter((q,i)=>answers[i]===q.c).length+'/5. Either way, you are still my favourite person to annoy. ♡'};root.appendChild(b)}}
+renderQuiz();
+</script>
+</body></html>
